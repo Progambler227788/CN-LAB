@@ -1,0 +1,8 @@
+add routers ,switches and PC
+add addresses and masks
+
+in each router add its address added as:
+
+r1: router rip
+network 192.168.10.0
+network 10.0.0.0

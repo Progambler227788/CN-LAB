@@ -1,0 +1,47 @@
+NAt Static:
+
+1) Setup PT router and switches 2-2
+2) under switch 1 -> assign ip addresses: 10.10.10.2 and 10.10.10.3 with gateaway 10.10.10.1
+3) under switch 2 -> assign ip addresses: 20.20.20.2 and gateway: 20.20.20.1
+
+IMP) assigning NAT
+Router0:
+4) in router0 CLI -> ip nat inside source static 10.10.10.2 50.50.50.2
+5) in router0 CLI -> ip nat inside source static 10.10.10.3 50.50.50.3
+6)	
+interface fastEthernet 0/0
+ip nat inside
+exit
+
+interface fastEthernet 1/0
+ip nat inside
+exit
+
+interface serial0/0
+ip nat outside
+exit
+
+Router1:
+1) in router0 CLI -> ip nat inside source static 20.20.20.2 60.60.60.2
+3)	
+Interface fastEthernet 0/0
+ip nat inside
+exit
+
+Interface Serial 2/0
+ip nat outside
+exit
+
+assigning path (route):
+
+Router0: (it moves to router so path of router 1 use)
+
+ip route 60.0.0.0 255.0.0.0 192.162.10.2
+exit
+
+Router1: (it moves to router so path of router 2 use)
+
+ip route 50.0.0.0 255.0.0.0 192.162.10.1
+exit
+
+

@@ -1,0 +1,20 @@
+enable
+configure terminal
+interface g0/0
+ip address 192.168.1.1 255.255.255.0
+no shutdown
+exit
+
+interface g0/1
+ip address 192.168.2.1 255.255.255.0
+no shutdown
+exit
+
+router 1941 to be taken
+switch 2960-24TT
+
+Give ip address 192.168.1.10, 192.168.1.11
+Default Gateway for both PCs is 192.168.1.1
+
+Give ip address 192.168.2.10, 192.168.2.11
+Default Gateway for both PCs is 192.168.2.1

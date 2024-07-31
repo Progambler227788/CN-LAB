@@ -1,0 +1,32 @@
+configure inital router setting-----
+
+Add 2911 router and 1 pc0
+
+connect it with console cable => Console- RS 232
+
+a) type y in terminal for PC0
+
+b)go to router gli -> enter and proceed with no no
+
+c) type commands:
+r1(config)#banner motd $
+Enter TEXT message.  End with the character '$'.
+Unauthorised access is strictly prohibited
+$
+
+not required if above completed
+d)
+r1#conf t
+r1(config)#
+r1(config)#line con 0
+r1(config-line)#password GFG123
+r1(config-line)#login
+r1(config-line)#exit
+
+r1(config-line)#enable password cisco
+r1(config)#enable secret GFG@123
+r1(config)#service password-encryption
+sh(config)#exit
+
+do this:
+then go to pc0 and check for password

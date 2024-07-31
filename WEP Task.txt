@@ -1,0 +1,10 @@
+Steps:
+1) WRT300N 
+2) 3 laptops
+	a) turn off laptop 	
+	b) replace w300 Adapter and then turn on
+3)In wirless: 
+	a)disable DHCP
+	b)Go to wirless option:
+		i)SSID name : ur name & save
+		ii) wirless security: WEP password and save
